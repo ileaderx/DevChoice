@@ -4,3 +4,7 @@ In this time of technology development, and this special situation of coronaviru
 Our project is a website that will sort your learning resources according to your level and the programming language you want to learn, so you won't get distracted and won't waste your time looking for what's good and what is useful.
 # 2.Description: 
 The idea of this project is to make your life easier by collecting and sorting programming language learning resources for you, where you can just log in to the website and choose the language you want to learn, choose your language proficiency level, and here you go you get all the resources you need, such as websites, YouTube channels, learning tutorials, testing websites categorized in a list, and more of the materials that can make you feel impressed and excited about learning the language you've always dreamed of learning.
+# 3.Scope:
+This website is designed primarily for people who want to learn new programming languages skills such as developers, technology majors students, or even high school students who love programming, but every time they get distracted by too many learning resources and then waste their time just looking for what's good for them, in this project, we will help you to learn the languages you want in the most efficient way that suits you. We're collecting Resources for you and you just chill and learn.
+# 4.Mission Statements:
+Delivering to you free programming learning resources, sorted and categorized according to your level of proficiency.

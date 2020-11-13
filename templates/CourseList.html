@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <link rel="icon" type="image/ico" href="static/img/coding.png"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <script>
+
+    function Confirm() {
+    var ask = window.confirm("Ok to confirm");
+    if (ask) {
+        window.location.href = "CourseList.html";
+
+    }
+}
+
+    </script>
+</head>
+<header>
+    {% include 'Header.html' %}
+</header>
+<body>
+
+{% block content %}
+
+<div class="container-fluid padding">
+    <div class="row padding">
+        {% if user_plans|length != 0 %}
+        {% for plan in user_plans %}
+            <div class="col-md-4">
+                    <div class="card">
+                        <!-- The images are not showing, although i'm providing the currect path. could you fix it please? -->
+                        <img class="card-imd-top" src="{{ plan.cover_img_url }}" alt="">
+                        <div class="card-body">
+                            <h4 class="card-title">{{ plan.name }}</h4>
+                            <hr class="hr-light">
+                            <p class="card-text">Description: {{ plan.name }} {{ plan.description }}</p>
+                            <p class="card-text">Estimated time to complete: {{ plan.est_time }}</p>
+                            <h5 class="card-text">Level: {{ plan.intended_level }}</h5><br>
+                                <a href="/resources/{{ plan.plan_id }}" class="btn btn-outline-secondary">Continue</a>
+                                                                                                    <!-- Fixed. :)-->
+                                <button href="/completed/{{ plan.plan_id }}" id="con-btn" class="btn btn-outline-secondary" onclick="Confirm()" >Mark completed</button>
+                              <div class="flip">
+                                <div class="front"></div>
+                                <div class="back">
+                                  <svg width="16" height="14" viewBox="0 0 16 14">
+                                    <path d="M2 8.5L6 12.5L14 1.5"></path>
+                                  </svg>
+                                </div>
+                              </div>
+                            </label>
+                        </div>
+                    </div>
+            </div>
+    {% endfor %}
+    {% else %}
+    <!-- Fixed. :) -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 id="title" class="text-center">You haven't selected any plans yet.</h2>
+                <h5 id="about-text" class="text-center">
+                    <a href="{{ url_for('home') }}">Click here to start a new plan.</a>
+                </h5>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+    </div>
+</div>
+
+{% endblock %}
+<br>
+<br>
+</body>
+
+<footer>
+    {% include 'Footer.html' %}
+</footer>
+</html>

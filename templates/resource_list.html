@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <link rel="icon" type="image/ico" href="static/img/coding.png"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+<header>
+    {% include 'Header.html' %}
+</header>
+<body>
+
+{% block content %}
+
+<div class="container-fluid padding">
+    <div class="row padding">
+        {% if resource_list|length != 0 %}
+        {% for resource in resource_list %}
+            <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">{{ resource.name }}</h4>
+                            <hr class="hr-light">
+                            <p class="card-text">Description: {{ resource.description }}</p>
+                                <a href="{{ resource.resource_url }}" class="btn btn-outline-secondary">Visit link</a>
+                              <div class="flip">
+                                <div class="front"></div>
+                                <div class="back">
+                                  <svg width="16" height="14" viewBox="0 0 16 14">
+                                    <path d="M2 8.5L6 12.5L14 1.5"></path>
+                                  </svg>
+                                </div>
+                              </div>
+                            </label>
+                        </div>
+                    </div>
+            </div>
+    {% endfor %}
+    {% else %}
+    <div id="about-text" style="text-align: center;">
+        <p>Sorry!. This plan has no resources yet.
+        <p></p><a href="{{ url_for('home') }}">Go back to the plan list</a>
+    </div>
+    {% endif %}
+    </div>
+</div>
+
+{% endblock %}
+<br>
+<br>
+</body>
+
+<footer>
+    {% include 'Footer.html' %}
+</footer>
+</html>

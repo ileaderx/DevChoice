@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Connect</title>
+    <link rel="icon" type="image/ico" href="static/img/coding.png"/>
+</head>
+<header>
+    {% include 'Header.html' %}
+</header>
+<body>
+<br><br>
+<!--- feedback -->
+<form method="post">
+<div class="container register-form">
+    <div class="form">
+        <div class="note">
+            <p>Write Us Feedback.</p>
+        </div>
+        <div class="form-content">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="User Name *" value="" required/>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <textarea class="form-control" placeholder="Feedback"></textarea>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btnSubmit">Send</button>&nbsp
+        </div>
+    </div>
+</div>
+<br><br>
+</form>
+<!--- Connect -->
+<div class="container-fluid padding">
+	<div class="row text-center padding">
+			<div class="col-12">
+				<h2>Connect</h2>
+			</div>
+			<div class="col-12 social padding">
+				<a href="https://weibo.com"><i class="fab fa-weibo"></i></a>
+				<a href="https://twitter.com/ileaderx"><i class="fab fa-twitter"></i></a>
+				<a href="weixin://dl/chat?ibrakadbra91"><i class="fab fa-weixin"></i></a>
+				<a href="https://instagram.com/wb7_"><i class="fab fa-instagram"></i></a>
+				<a href="https://qm.qq.com/cgi-bin/qm/qr?k=ehFQtIyI2no-rJDwiGkEMWycMiE24YJ0&noverify=0"><i class="fab fa-qq"></i></a>
+			</div>
+	</div>
+
+</div>
+
+</body>
+<footer>
+    {% include 'Footer.html' %}
+</footer>
+</html>

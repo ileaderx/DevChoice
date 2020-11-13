@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Language Cards</title>
+    <link rel="icon" type="image/ico" href="static/img/coding.png"/>
+</head>
+<header>
+    {% include 'Header.html' %}
+</header>
+<body>
+<!--- Cards -->
+{% block content%}
+<div class="container-fluid padding">
+		<div class="row padding">
+      {% for p in plan %}
+				<div class="col-md-4">
+						<div class="card">
+							<img class="card-imd-top" src="{{ p.cover_img_url }}" alt="">
+							<div class="card-body">
+								<h4 class="card-title">{{ p.name }}</h4>
+                                <hr class="hr-light">
+								<p class="card-text">Description: {{ p.name }} {{ p.description }}</p>
+                                <h5 class="card-text">Level: {{ p.intended_level }}</h5><br>
+									<a href="/start/{{ p.plan_id }}" class="btn btn-outline-secondary">Start plan</a>
+                                  <div class="flip">
+                                    <div class="front"></div>
+                                    <div class="back">
+                                      <svg width="16" height="14" viewBox="0 0 16 14">
+                                        <path d="M2 8.5L6 12.5L14 1.5"></path>
+                                      </svg>
+                                    </div>
+                                  </div>
+                                </label>
+							</div>
+						</div>
+				</div>
+        {% endfor %}
+		</div>
+</div>
+{% endblock %}
+<br><br>
+<br><br>
+<br><br>
+</body>
+
+<footer>
+    {% include 'Footer.html' %}
+</footer>
+</html>

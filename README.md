@@ -1,0 +1,2 @@
+# DevChoice
+The idea of this project is to make your life easier by collecting and sorting programming language learning resources for you, where you can just log in to the website and choose the language you want to learn, choose your language proficiency level, and here you go you get all the resources you need, such as websites, YouTube channels, learning tutorials, testing websites categorized in a list, and more of the materials that can make you feel impressed and excited about learning the language you've always dreamed of learning.
